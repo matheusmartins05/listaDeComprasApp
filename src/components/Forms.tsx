@@ -6,21 +6,22 @@ export default function Forms() {
 
 
 
+
   return (
     <section className="bg-[#0c0c0d] h-96">
-      <div className="py-4 w-[90%] mx-auto">
-        <Input>Item</Input>
+      <div className="py-4 w-[90%] mx-auto text-white">
+        <Input borderRadius="rounded-md">Item</Input>
       </div>
 
       <div className="flex items-end w-[90%] mx-auto">
-        <div className="w-[20%]">
-          <Input>Quantidade</Input>
+        <div className="w-[20%] text-white">
+          <Input borderRadius="rounded-s-md">Quantidade</Input>
         </div>
 
         <Select/>
 
-        <div className="w-[40%] ml-2">
-          <Input>Categoria</Input>
+        <div className="w-[40%] ml-2 text-white">
+          <Input borderRadius="rounded-md">Categoria</Input>
         </div>
 
         <Button>
