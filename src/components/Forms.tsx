@@ -2,27 +2,32 @@ import Input from "./TextField";
 import Button from "./Button";
 import Select from "./Select";
 import { useRecoilState } from "recoil";
-import { categoria, idItens, item, quantidade, unidadeDeMedida } from "../atoms/states";
+import { categoria, idItens, item, listaDeItens, quantidade, unidadeDeMedida } from "../atoms/states";
 import categorias from "./categorias.json";
 import IItem from "../interfaces/IItem";
 import { v4 as uuidv4 } from 'uuid';
 
-interface FormularioProps{
-  informacoesDoItemCadastrado: (item: IItem) => void
-}
 
 
-export default function Forms({informacoesDoItemCadastrado} : FormularioProps) {
+export default function Forms() {
   const [itemInserido, setItemInserido] = useRecoilState(item);
   const [quantidadeInserida, setquantidadeInserida] = useRecoilState(quantidade);
   const [unidadeDeMedidaInserida, setunidadeDeMedidaInserida] = useRecoilState(unidadeDeMedida);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
   const [id, setId] = useRecoilState(idItens)
 
+  const [listaDosItensInseridos, setListaDosItensInseridos] = useRecoilState(listaDeItens);
+
+
+  function adicionaItemAhLista(item: IItem) {
+    setListaDosItensInseridos([...listaDosItensInseridos, item]);
+  }
+
+
   function onSubmitForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); 
     setId(uuidv4())
-    informacoesDoItemCadastrado({
+    adicionaItemAhLista({
       nome: itemInserido,
       quantidade: quantidadeInserida,
       unidadeDeMedida: unidadeDeMedidaInserida,
@@ -32,6 +37,7 @@ export default function Forms({informacoesDoItemCadastrado} : FormularioProps) {
 
  
   }
+
 
   return (
     <form onSubmit={onSubmitForm} className="bg-[#0c0c0d]">
@@ -58,9 +64,9 @@ export default function Forms({informacoesDoItemCadastrado} : FormularioProps) {
 
         <Select  valorSelecionadoState={unidadeDeMedidaInserida} valorSelecionado={setunidadeDeMedidaInserida} borderRadius="rounded-e-md">
           <option value=""></option>
-          <option value="Unidade">UN.</option>
-          <option value="Litro">L</option>
-          <option value="Kilo">KG</option>
+          <option value="UN.">UN.</option>
+          <option value="L">L</option>
+          <option value="KG">KG</option>
         </Select>
 
         <div className="w-[40%] ml-2 text-white">

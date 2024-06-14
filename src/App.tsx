@@ -1,16 +1,10 @@
-import { useRecoilState } from "recoil";
+
 import Forms from "./components/Forms";
 import SectionItens from "./components/SectionItens";
 import Titulo from "./components/Titulo";
-import { listaDeItens } from "./atoms/states";
-import IItem from "./interfaces/IItem";
 
 function App() {
-  const [listaDosItensInseridos, setListaDosItensInseridos] = useRecoilState(listaDeItens);
-  function aoAdicionarItem(item: IItem) {
-    setListaDosItensInseridos([...listaDosItensInseridos, item]);
-    console.log(listaDosItensInseridos)
-  }
+
 
   return (
     <>
@@ -20,7 +14,7 @@ function App() {
           </Titulo>
         </header>
 
-        <Forms informacoesDoItemCadastrado={(item) => aoAdicionarItem(item)} />
+        <Forms/>
         <SectionItens />
     </>
   );
