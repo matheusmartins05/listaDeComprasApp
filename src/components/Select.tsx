@@ -1,4 +1,7 @@
 import { ReactNode } from "react";
+import categorias from "./categorias.json";
+import { useRecoilState } from "recoil";
+import { iconeItens } from "../atoms/states";
 
 interface SelectProps{
   children: ReactNode
@@ -8,9 +11,15 @@ interface SelectProps{
   valorSelecionado: (newState: string) => void
 }
 export default function Select({children, borderRadius, width, valorSelecionadoState, valorSelecionado} : SelectProps) {
+  const [, setUrlIconeItem] = useRecoilState(iconeItens)
 
   function aoSelecionarValor(event: React.ChangeEvent<HTMLSelectElement>){
     valorSelecionado(event.target.value)
+    categorias.filter(element => {
+      if (element.nome === event.target.value) {
+        setUrlIconeItem(element.icone)
+      }
+    });
   }
 
   return (

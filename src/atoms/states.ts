@@ -30,3 +30,8 @@ export const idItens = atom({
     key: "idItens",
     default: ""
 })
+
+export const iconeItens = atom({
+    key: "iconeItens",
+    default: ""
+})

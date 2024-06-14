@@ -2,7 +2,7 @@ import Input from "./TextField";
 import Button from "./Button";
 import Select from "./Select";
 import { useRecoilState } from "recoil";
-import { categoria, idItens, item, listaDeItens, quantidade, unidadeDeMedida } from "../atoms/states";
+import { categoria, iconeItens, idItens, item, listaDeItens, quantidade, unidadeDeMedida } from "../atoms/states";
 import categorias from "./categorias.json";
 import IItem from "../interfaces/IItem";
 import { v4 as uuidv4 } from 'uuid';
@@ -15,6 +15,7 @@ export default function Forms() {
   const [unidadeDeMedidaInserida, setunidadeDeMedidaInserida] = useRecoilState(unidadeDeMedida);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
   const [id, setId] = useRecoilState(idItens)
+  const [urlIconItem, setUrlIconItem] = useRecoilState(iconeItens)
 
   const [listaDosItensInseridos, setListaDosItensInseridos] = useRecoilState(listaDeItens);
 
@@ -32,7 +33,8 @@ export default function Forms() {
       quantidade: quantidadeInserida,
       unidadeDeMedida: unidadeDeMedidaInserida,
       categoria: categoriaInserida,
-      id: id
+      id: id,
+      urlIcon: urlIconItem
     }) 
 
  

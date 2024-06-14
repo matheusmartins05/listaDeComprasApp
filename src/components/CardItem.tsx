@@ -1,8 +1,7 @@
 import IItem from '../interfaces/IItem';
-import frutaIcon from '/fruta.svg'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
-export default function CardItem({nome, quantidade, unidadeDeMedida} : IItem){
+export default function CardItem({nome, quantidade, unidadeDeMedida, urlIcon} : IItem){
     return(
         <div className='flex justify-between items-center w-[90%] mx-auto border border-gray-700 rounded-md p-4 '>
             <input type="checkbox" />
@@ -13,7 +12,7 @@ export default function CardItem({nome, quantidade, unidadeDeMedida} : IItem){
             </div>
 
             <figure>
-                <img src={frutaIcon} alt="" />
+                <img src={urlIcon} alt="" />
             </figure>
 
             <DeleteOutlineOutlinedIcon/>

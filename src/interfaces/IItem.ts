@@ -4,4 +4,5 @@ export default interface IItem{
     quantidade: string
     unidadeDeMedida: string
     categoria: string
+    urlIcon: string
 }
