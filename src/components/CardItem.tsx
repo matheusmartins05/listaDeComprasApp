@@ -8,7 +8,7 @@ export default function CardItem(){
 
             <div>
                 <h3>Maça</h3>
-                <p>2 unidades</p>
+                <p className='text-sm'>2 unidades</p>
             </div>
 
             <figure>
