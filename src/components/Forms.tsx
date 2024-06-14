@@ -15,10 +15,16 @@ export default function Forms() {
   const [unidadeDeMedidaInserida, setunidadeDeMedidaInserida] = useRecoilState(unidadeDeMedida);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
   const [id, setId] = useRecoilState(idItens)
-  const [urlIconItem, setUrlIconItem] = useRecoilState(iconeItens)
+  const [urlIconItem] = useRecoilState(iconeItens)
 
   const [listaDosItensInseridos, setListaDosItensInseridos] = useRecoilState(listaDeItens);
 
+  function limpaInputsAoEnviarForms() {
+    setItemInserido("")
+    setquantidadeInserida("")
+    setunidadeDeMedidaInserida("")
+    setcategoriaInserida("")
+  }
 
   function adicionaItemAhLista(item: IItem) {
     setListaDosItensInseridos([...listaDosItensInseridos, item]);
@@ -37,6 +43,8 @@ export default function Forms() {
       urlIcon: urlIconItem
     }) 
 
+    limpaInputsAoEnviarForms();
+      
  
   }
 
@@ -73,6 +81,7 @@ export default function Forms() {
 
         <div className="w-[40%] ml-2 text-white">
           <Select valorSelecionadoState={categoriaInserida} valorSelecionado={setcategoriaInserida} width="w-[100%]" borderRadius="rounded-md">
+            <option value=""></option>
             {categorias.map((categoria) => (
               <option key={categoria.id}>{categoria.nome}</option>
             ))}
