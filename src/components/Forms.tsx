@@ -2,21 +2,35 @@ import Input from "./TextField";
 import Button from "./Button";
 import Select from "./Select";
 import { useRecoilState } from "recoil";
-import { categoria, item, quantidade, unidadeDeMedida } from "../atoms/states";
+import { categoria, idItens, item, quantidade, unidadeDeMedida } from "../atoms/states";
 import categorias from "./categorias.json";
+import IItem from "../interfaces/IItem";
+import { v4 as uuidv4 } from 'uuid';
 
-export default function Forms() {
+interface FormularioProps{
+  informacoesDoItemCadastrado: (item: IItem) => void
+}
+
+
+export default function Forms({informacoesDoItemCadastrado} : FormularioProps) {
   const [itemInserido, setItemInserido] = useRecoilState(item);
   const [quantidadeInserida, setquantidadeInserida] = useRecoilState(quantidade);
   const [unidadeDeMedidaInserida, setunidadeDeMedidaInserida] = useRecoilState(unidadeDeMedida);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
+  const [id, setId] = useRecoilState(idItens)
 
   function onSubmitForm(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    console.log(itemInserido);
-    console.log(quantidadeInserida);
-    console.log(unidadeDeMedidaInserida);
-    console.log(categoriaInserida);
+    event.preventDefault(); 
+    setId(uuidv4())
+    informacoesDoItemCadastrado({
+      nome: itemInserido,
+      quantidade: quantidadeInserida,
+      unidadeDeMedida: unidadeDeMedidaInserida,
+      categoria: categoriaInserida,
+      id: id
+    }) 
+
+ 
   }
 
   return (

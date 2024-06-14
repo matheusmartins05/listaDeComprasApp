@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import IItem from "../interfaces/IItem";
 
 export const item = atom({
     key: "itemDigitado",
@@ -20,7 +21,12 @@ export const categoria = atom({
     default: ""
 })
 
-export const listaDeItens = atom({
+export const listaDeItens = atom<IItem[]>({
     key: "listaDeItens",
     default: []
+})
+
+export const idItens = atom({
+    key: "idItens",
+    default: ""
 })
