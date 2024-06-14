@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nome": "Padaria",
+    "tag": "/padaria.svg",
+    "icone": "/padariaIcon.svg"
+  },
+  {
+    "id": 2,
+    "nome": "Legume",
+    "tag": "/legume.svg",
+    "icone": "/legumeIcon.svg"
+  },
+  {
+    "id": 3,
+    "nome": "Fruta",
+    "tag": "/fruta.svg",
+    "icone": "/frutaIcon.svg"
+  },
+  {
+    "id": 4,
+    "nome": "Bebida",
+    "tag": "bebida.svg",
+    "icone": "/bebidaIcon.svg"
+  },
+  {
+    "id": 5,
+    "nome": "Carne",
+    "tag": "carne.svg",
+    "icone": "/carneIcon.svg"
+  }
+]
