@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from "./TextField";
 import Button from "./Button";
 import Select from "./Select";
 
@@ -8,7 +8,7 @@ export default function Forms() {
 
 
   return (
-    <section className="bg-[#0c0c0d] h-96">
+    <section className="bg-[#0c0c0d]">
       <div className="py-4 w-[90%] mx-auto text-white">
         <Input borderRadius="rounded-md">Item</Input>
       </div>

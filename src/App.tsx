@@ -1,4 +1,5 @@
 import Forms from "./components/Forms";
+import SectionItens from "./components/SectionItens";
 import Titulo from "./components/Titulo";
 
 
@@ -14,6 +15,7 @@ function App() {
       </header>
 
       <Forms/>
+      <SectionItens/>
     </>
   );
 }
