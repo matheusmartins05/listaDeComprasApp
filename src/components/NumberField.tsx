@@ -1,3 +1,4 @@
+import { Notify } from "notiflix";
 import { ReactNode } from "react";
 
 interface InputProps{
@@ -8,10 +9,15 @@ interface InputProps{
     typeInput: string
 }
 
-export default function TextField({children, borderRadius, valorDigitado, valorDigitadoState, typeInput} : InputProps) {
+export default function NumberField({children, borderRadius, valorDigitado, valorDigitadoState, typeInput} : InputProps) {
 
   function aoDigitarValores(event: React.ChangeEvent<HTMLInputElement>){
-      valorDigitado(event.target.value);
+    if (!isNaN(Number(event.target.value))) {
+        valorDigitado(event.target.value);
+      } else{
+        Notify.failure("Este campo permite somente números");
+      } 
+   
   };
   
 

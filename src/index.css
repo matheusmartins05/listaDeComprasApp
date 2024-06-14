@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    width: 320px;
-    margin: auto;
-}
-
-#demo-simple-select{
-    border-color: #32a1ce;
+body {
+  width: 320px;
+  margin: auto;
 }

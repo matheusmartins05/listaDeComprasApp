@@ -35,3 +35,9 @@ export const iconeItens = atom({
     key: "iconeItens",
     default: ""
 })
+
+export const foiComprado = atom({
+    key: "foiComprado",
+    default: ""
+})
+
