@@ -6,3 +6,7 @@ body {
   width: 320px;
   margin: auto;
 }
+
+#scroll{
+  scrollbar-width: none; /* Largura da barra de rolagem (pode ser 'thin', 'auto' ou 'none') */
+}
