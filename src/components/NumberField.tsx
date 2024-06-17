@@ -24,7 +24,7 @@ export default function NumberField({children, borderRadius, valorDigitado, valo
   return (
     <div className="flex gap-1 flex-col ">
       <label className="text-gray-400">{children}</label>
-      <input value={valorDigitadoState} onChange={(event) => aoDigitarValores(event)} className={`bg-transparent border border-gray-500 ${borderRadius} h-10 outline-none indent-2`} type={typeInput}/>
+      <input value={valorDigitadoState} onChange={(event) => aoDigitarValores(event)} className={`bg-transparent border border-gray-500 ${borderRadius} h-10 outline-[#A881E6] focus:outline indent-2`} type={typeInput}/>
     </div>
   );
 }
