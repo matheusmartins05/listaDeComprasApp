@@ -5,4 +5,5 @@ export default interface IItem{
     unidadeDeMedida: string
     categoria: string
     urlIcon: string
+    itemComprado?: string
 }

@@ -4,6 +4,7 @@ import Select from "./SelectCategoria";
 import { useRecoilState } from "recoil";
 import {
   categoria,
+  foiComprado,
   iconeItens,
   idItens,
   item,
@@ -19,6 +20,7 @@ import SelectUnidadeMedida from "./SelectUnidadeMedida";
 
 
 export default function Forms() {
+  const [ compradoOuNão ] = useRecoilState(foiComprado)
   const [itemInserido, setItemInserido] = useRecoilState(item);
   const [quantidadeInserida, setquantidadeInserida] =
     useRecoilState(quantidade);
@@ -65,8 +67,8 @@ export default function Forms() {
         categoria: categoriaInserida,
         id: id,
         urlIcon: urlIconItem,
-      });
-
+        itemComprado: compradoOuNão 
+        });
       limpaInputsAoEnviarForms();
     }
   }

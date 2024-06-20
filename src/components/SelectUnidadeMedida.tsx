@@ -13,7 +13,7 @@ export default function SelectUnidadeMedida() {
     <select
       onChange={aoSelecionarOpcao}
       value={unidadeDeMedidaInserida}
-      className="rounded-e-md h-10 border bg-transparent text-gray-500 border-gray-500"
+      className="rounded-e-md h-10 border bg-transparent text-gray-500 border-[#252529]"
     >
       <option value=""></option>
       <option value="UN.">UN.</option>
