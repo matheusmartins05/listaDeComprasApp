@@ -105,12 +105,8 @@ export default function Forms() {
 
         <SelectUnidadeMedida/>
 
-        <div className="w-[40%] ml-2 text-white">
-          <Select
-            width="w-[100%]"
-            borderRadius="rounded-md"
-          />
-        </div>
+        
+          <Select/>
 
         <Button>
           <button

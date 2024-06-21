@@ -5,25 +5,22 @@ import { categoria, iconeItens } from "../atoms/states";
 import iconArrow from "/IconArrow.svg"
 
 
-interface SelectProps {
-  borderRadius: string;
-  width?: string;
-}
-export default function SelectCategoria({
-  borderRadius,
-  width,
-}: SelectProps) {
+export default function SelectCategoria() {
   const [, setUrlIconeItem] = useRecoilState(iconeItens);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
 
 
   const [ mostarOpcoes, setMostarOpcoes] = useState("hidden")
+  const [ outlineCategoria, setOutlineCategoria] = useState('border-[#252529] out')
 
   function exibirOpcoesCategoria(){
+    setOutlineCategoria('border-[#A881E6] ')
     if (mostarOpcoes === "hidden") {
+      
       setMostarOpcoes("flex")
     } else {
       setMostarOpcoes("hidden")
+      setOutlineCategoria("border-[#252529]")
     }
   }
 
@@ -40,21 +37,17 @@ export default function SelectCategoria({
   }
 
   return (
-    <>
-      <ul
 
-        className={`h-10 border bg-transparent border-[#252529] ${borderRadius} ${width} text-gray-300`}
-      >
-        <li
-          onClick={exibirOpcoesCategoria}
-          className="mb-2 mr-2 h-[100%] flex justify-end items-center cursor-pointer"
-        >
-          {categoriaInserida} <img src={iconArrow} alt="" />
-        </li>
+    <div onClick={exibirOpcoesCategoria} className={`w-[40%] relative ml-2 px-3 h-10 rounded-md ${outlineCategoria} cursor-pointer border-[#252529] flex ${categoriaInserida === '' ? 'justify-end' : 'justify-between'} items-center text-white border`}>
+
+      {categoriaInserida} <img className="" src={iconArrow} alt="" />
+      
+      <ul  className={`border border-[#252529] bg-transparent absolute top-14 flex flex-col w-44 left-0 ${mostarOpcoes} rounded-md text-gray-300`}>
+      
         {categorias.map((categoria) => (
           <li
             onClick={() => recebeValorSelecionado(categoria.nome)}
-            className={`bg-slate-800 p-1 ${mostarOpcoes} relative border-gray-500 border gap-2 cursor-pointer`}
+            className={`bg-[#171719] cursor-pointer flex gap-4 p-2 border-b border-b-[#252529] hover:bg-[#252529]`}
             key={categoria.id}
           >
             <img className="w-6" src={categoria.icone} alt="" />
@@ -62,6 +55,7 @@ export default function SelectCategoria({
           </li>
         ))}
       </ul>
-    </>
+      </div>
+
   );
 }

@@ -13,12 +13,12 @@ export default function SelectUnidadeMedida() {
     <select
       onChange={aoSelecionarOpcao}
       value={unidadeDeMedidaInserida}
-      className="rounded-e-md h-10 border bg-transparent text-gray-500 border-[#252529]"
+      className={`rounded-e-md h-10 bg-transparent text-gray-500 border border-[#252529] focus:outline-[#A881E6] focus:outline }`}
     >
-      <option value=""></option>
-      <option value="UN.">UN.</option>
-      <option value="L">L</option>
-      <option value="KG">KG</option>
+      <option className="bg-[#171719] hover:bg-white" value=""></option>
+      <option className="bg-[#171719]" value="UN.">UN.</option>
+      <option className="bg-[#171719]" value="L">L</option>
+      <option className="bg-[#171719]" value="KG">KG</option>
     </select>
   );
 }
