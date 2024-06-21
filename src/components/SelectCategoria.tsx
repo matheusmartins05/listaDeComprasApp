@@ -43,7 +43,7 @@ export default function SelectCategoria({
     <>
       <ul
 
-        className={`h-10 border bg-transparent border-[#252529] ${borderRadius} ${width} text-gray-300 outline-[#A881E6] focus:outline `}
+        className={`h-10 border bg-transparent border-[#252529] ${borderRadius} ${width} text-gray-300`}
       >
         <li
           onClick={exibirOpcoesCategoria}

@@ -27,7 +27,8 @@ export default function CardItem({
     const itemRepetido = listaDosItensInseridos.some((item) => item.id === item.id);
     let novaLista = [...listaDosItensInseridos];
     if (event.target.checked) {
-      item.itemComprado = "line-through";
+      item.itemComprado = "line-through bg-[#111112] border-none";
+
 
 
       if (itemRepetido) {
@@ -36,6 +37,7 @@ export default function CardItem({
         return listaDosItensInseridos;
       }
     }else{
+      item.itemComprado = "bg-[#171719] border-[#252529]";
       if (itemRepetido) {
         novaLista = listaDosItensInseridos.filter((fav) => fav.id !== item.id);
         setListaDosItensInseridos([item, ...novaLista]);
@@ -45,7 +47,7 @@ export default function CardItem({
   }
 
   return (
-    <div className="flex justify-between items-center w-[90%] mx-auto border bg-[#111112] border-[#252529] rounded-md p-4 ">
+    <div className={`flex justify-between items-center w-[90%] mx-auto border ${itemComprado} rounded-md p-4 `}>
       <input
         type="checkbox"
         onChange={(event) =>
@@ -57,7 +59,7 @@ export default function CardItem({
               unidadeDeMedida,
               categoria,
               urlIcon,
-              itemComprado: "",
+              itemComprado
             },
             event
           )

@@ -38,6 +38,6 @@ export const iconeItens = atom({
 
 export const foiComprado = atom({
     key: "foiComprado",
-    default: ''
+    default: "border-[#252529]"
 })
 
