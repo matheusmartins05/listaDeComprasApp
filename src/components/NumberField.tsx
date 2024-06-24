@@ -9,6 +9,12 @@ interface InputProps{
     typeInput: string
 }
 
+Notify.init({
+  width: "300px",
+  position: "center-top",
+  closeButton: true,
+});
+
 export default function NumberField({children, borderRadius, valorDigitado, valorDigitadoState, typeInput} : InputProps) {
 
   function aoDigitarValores(event: React.ChangeEvent<HTMLInputElement>){
