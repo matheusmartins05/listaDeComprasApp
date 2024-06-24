@@ -46,7 +46,8 @@ export default function Forms() {
   }
 
   function adicionaItemAhLista(item: IItem) {
-    setListaDosItensInseridos([...listaDosItensInseridos, item]);
+    let novaLista = [...listaDosItensInseridos, ]
+    setListaDosItensInseridos([item, ...novaLista]);
   }
 
   function onSubmitForm(event: React.FormEvent<HTMLFormElement>) {
