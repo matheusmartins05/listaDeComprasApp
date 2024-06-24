@@ -7,13 +7,15 @@ export default function SectionItens() {
 
 
   return (
-    <section  id="scroll" className="bg-[#0c0c0d] h-80 overflow-auto text-gray-400 w-[100%] py-10 flex flex-col gap-3">
-      {listaDosItensInseridos.map((item) => (
-        <CardItem 
-            key={item.id} 
-            {...item}
-            />
-      ))}
+    <section  className=" overflow-auto text-gray-400 w-[100%] h-[100vh]  sm:w-[60%] mx-auto  ">
+      <div  id="scroll" className="overflow-auto h-96 flex flex-col gap-3">
+        {listaDosItensInseridos.map((item) => (
+          <CardItem
+              key={item.id}
+              {...item}
+              />
+        ))}
+      </div>
     </section>
   );
 }

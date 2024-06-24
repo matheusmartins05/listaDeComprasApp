@@ -6,6 +6,6 @@ interface ButtonProps{
 
 export default function Button({children} : ButtonProps){
     return(
-        <div>{children}</div>
+        <div className="w-[20%] flex justify-end">{children}</div>
     )
 }

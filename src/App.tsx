@@ -33,11 +33,13 @@ function App() {
   return (
 
     
-    < div onClick={fecharOpcoesDropdown}>
-        <header className="bg-[url('/banner.png')] h-32 mx-auto flex items-center">
-          <Titulo>
-            <h1 className="text-white ml-6 text-xl">Lista de Compras</h1>
-          </Titulo>
+    < div className="w-[100%] mx-auto bg-[#0c0c0d]" onClick={fecharOpcoesDropdown}>
+        <header className="bg-[url('/banner.png')] h-40 mx-auto flex items-center">
+          <div className="sm:w-[60%] mx-auto w-[90%]">
+            <Titulo>
+              <h1 className="text-white text-xl ">Lista de Compras</h1>
+            </Titulo>
+          </div>
         </header>
 
         <Forms/>

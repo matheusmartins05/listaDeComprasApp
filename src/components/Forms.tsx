@@ -80,7 +80,7 @@ export default function Forms() {
   
 
   return (
-    <form onSubmit={onSubmitForm} className="bg-[#0c0c0d]">
+    <form onSubmit={onSubmitForm} className="bg-[#0c0c0d] sm:flex sm:items-center sm:w-[60%] mx-auto gap-4 pb-6">
       <div className="py-4 w-[90%] mx-auto text-white">
         <TextField
           typeInput="text"

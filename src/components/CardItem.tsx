@@ -47,7 +47,7 @@ export default function CardItem({
   }
 
   return (
-    <div className={`flex justify-between items-center w-[90%] mx-auto border ${itemComprado} rounded-md p-4 `}>
+    <div className={`flex justify-between items-center w-[90%] sm:w-[100%]  mx-auto border ${itemComprado} rounded-md p-4 `}>
       <input
         type="checkbox"
         onChange={(event) =>
@@ -73,7 +73,7 @@ export default function CardItem({
         </p>
       </div>
 
-      <figure>
+      <figure className="w-[40%] flex justify-end">
         <img src={urlIcon} alt="" />
       </figure>
 
