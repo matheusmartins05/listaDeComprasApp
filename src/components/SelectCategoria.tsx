@@ -1,14 +1,13 @@
-import { useState } from "react";
 import categorias from "./categorias.json";
 import { useRecoilState } from "recoil";
-import { categoria, iconeItens, opcoesDropdown, outlineDaCategoria } from "../atoms/states";
+import { categoria, iconeItens, opcoesDropdownCategoria, outlineDaCategoria } from "../atoms/states";
 import iconArrow from "/IconArrow.svg"
 
 
 export default function SelectCategoria() {
   const [, setUrlIconeItem] = useRecoilState(iconeItens);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
-  const [ mostarOpcoes, setMostarOpcoes] = useRecoilState(opcoesDropdown)
+  const [ mostarOpcoes, setMostarOpcoes] = useRecoilState(opcoesDropdownCategoria)
   const [ outlineCategoria, setOutlineCategoria] = useRecoilState(outlineDaCategoria)
 
   function exibirOpcoesCategoria(){

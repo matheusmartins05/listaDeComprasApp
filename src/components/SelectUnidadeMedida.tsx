@@ -1,7 +1,7 @@
-import { useState } from "react";
+
 import categorias from "./categorias.json";
 import { useRecoilState } from "recoil";
-import {iconeItens, unidadeDeMedida } from "../atoms/states";
+import {iconeItens, opcoesDropdownMedidas, outlineDaMedida, unidadeDeMedida } from "../atoms/states";
 import iconArrow from "/IconArrow.svg"
 
 
@@ -9,18 +9,16 @@ export default function SelectCategoria() {
   const [, setUrlIconeItem] = useRecoilState(iconeItens);
   const [unidadeDeMedidaEscolhida, setUnidadeDeMedidaEscolhida] = useRecoilState(unidadeDeMedida);
   const unidadesDeMedidas = ['UN.', 'L', 'KG']
-
-
-  const [ mostarOpcoes, setMostarOpcoes] = useState("hidden")
-  const [ outlineCategoria, setOutlineCategoria] = useState('border-[#252529] out')
+  const [ mostarOpcoesMedidas, setMostarOpcoesMedidas] = useRecoilState(opcoesDropdownMedidas)
+  const [ outlineCategoria, setOutlineCategoria] = useRecoilState(outlineDaMedida)
 
   function exibirOpcoesCategoria(){
-    setOutlineCategoria('border-[#A881E6] ')
-    if (mostarOpcoes === "hidden") {
-      
-      setMostarOpcoes("flex")
+    
+    if (mostarOpcoesMedidas === "hidden") {
+      setOutlineCategoria('border-[#A881E6] ')
+      setMostarOpcoesMedidas("flex")
     } else {
-      setMostarOpcoes("hidden")
+      setMostarOpcoesMedidas("hidden")
       setOutlineCategoria("border-[#252529]")
     }
   }
@@ -34,7 +32,7 @@ export default function SelectCategoria() {
       }
     })
 
-    setMostarOpcoes("hidden")
+    setMostarOpcoesMedidas("hidden")
   }
 
   return (
@@ -43,12 +41,13 @@ export default function SelectCategoria() {
 
       {unidadeDeMedidaEscolhida} <img className="" src={iconArrow} alt="" />
       
-      <ul  className={`border border-[#252529] bg-transparent absolute top-14 flex flex-col w-14 left-0 ${mostarOpcoes} rounded-md text-gray-300`}>
+      <ul  className={`border border-[#252529] bg-transparent absolute top-14 flex flex-col w-14 left-0 ${mostarOpcoesMedidas} rounded-md text-gray-300`}>
       
         {unidadesDeMedidas.map((unidadeMedida) => (
           <li
             onClick={() => recebeValorSelecionado(unidadeMedida)}
             className={`bg-[#171719] cursor-pointer flex gap-4 p-2 border-b border-b-[#252529] hover:bg-[#252529]`}
+            key={unidadeMedida}
           >
             {unidadeMedida}
           </li>

@@ -41,8 +41,13 @@ export const foiComprado = atom({
     default: "border-[#252529]"
 })
 
-export const opcoesDropdown = atom({
-    key: "opcoesDropdown",
+export const opcoesDropdownCategoria = atom({
+    key: "opcoesDropdownCategoria",
+    default: "hidden"
+})
+
+export const opcoesDropdownMedidas = atom({
+    key: "opcoesDropdownMedidas",
     default: "hidden"
 })
 
@@ -51,7 +56,7 @@ export const outlineDaCategoria = atom({
     default: "border-[#252529]"
 })
 
-export const fecharDropdow = atom({
-    key: "fecharDropdow",
-    default: ""
+export const outlineDaMedida = atom({
+    key: "outlineDaMedida",
+    default: "border-[#252529]"
 })
