@@ -1,17 +1,15 @@
 import { useState } from "react";
 import categorias from "./categorias.json";
 import { useRecoilState } from "recoil";
-import { categoria, iconeItens } from "../atoms/states";
+import { categoria, iconeItens, opcoesDropdown, outlineDaCategoria } from "../atoms/states";
 import iconArrow from "/IconArrow.svg"
 
 
 export default function SelectCategoria() {
   const [, setUrlIconeItem] = useRecoilState(iconeItens);
   const [categoriaInserida, setcategoriaInserida] = useRecoilState(categoria);
-
-
-  const [ mostarOpcoes, setMostarOpcoes] = useState("hidden")
-  const [ outlineCategoria, setOutlineCategoria] = useState('border-[#252529] out')
+  const [ mostarOpcoes, setMostarOpcoes] = useRecoilState(opcoesDropdown)
+  const [ outlineCategoria, setOutlineCategoria] = useRecoilState(outlineDaCategoria)
 
   function exibirOpcoesCategoria(){
     setOutlineCategoria('border-[#A881E6] ')
